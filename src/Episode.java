@@ -1,20 +1,20 @@
 public class Episode {
     private String title;
     private int episodeNumber;
-    private int sesongNumber;
-    private int rintime;
+    private int seasonNumber;
+    private int runtime;
 
-    public Episode(String title, int episodeNumber, int sesongNumber, int rintime) {
+    public Episode(String title, int episodeNumber, int seasonNumber, int runtime) {
         this.title = title;
         this.episodeNumber = episodeNumber;
-        this.sesongNumber = sesongNumber;
-        this.rintime = rintime;
+        this.seasonNumber = seasonNumber;
+        this.runtime = runtime;
     }
 
-    public Episode(String title, int episodeNumber, int sesongNumber){
+    public Episode(String title, int episodeNumber, int seasonNumber){
         this.title = title;
         this.episodeNumber = episodeNumber;
-        this.sesongNumber = sesongNumber;
+        this.seasonNumber = seasonNumber;
     }
 
     public String getTitle() {
@@ -33,19 +33,19 @@ public class Episode {
         this.episodeNumber = episodeNumber;
     }
 
-    public int getSesongNumber() {
-        return sesongNumber;
+    public int getSeasonNumber() {
+        return seasonNumber;
     }
 
-    public void setSesongNumber(int sesongNumber) {
-        this.sesongNumber = sesongNumber;
+    public void setSeasonNumber(int seasonNumber) {
+        this.seasonNumber = seasonNumber;
     }
 
-    public int getRintime() {
-        return rintime;
+    public int getRuntime() {
+        return runtime;
     }
 
-    public void setRintime(int rintime) {
-        this.rintime = rintime;
+    public void setRuntime(int runtime) {
+        this.runtime = runtime;
     }
 }

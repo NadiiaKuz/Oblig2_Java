@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class TVSeries {
     private String title;
     private String description;
-    private LocalDate releseDate;
+    private LocalDate releaseDate;
     private ArrayList<Episode> episodes;
 
     public String getTitle() {
@@ -23,12 +23,12 @@ public class TVSeries {
         this.description = description;
     }
 
-    public LocalDate getReleseDate() {
-        return releseDate;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setReleseDate(LocalDate releseDate) {
-        this.releseDate = releseDate;
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public ArrayList<Episode> getEpisodes() {
