@@ -48,4 +48,12 @@ public class Episode {
     public void setRuntime(int runtime) {
         this.runtime = runtime;
     }
+
+    @Override
+    public String toString() {
+        return "Episode Title: " + title + '\n' +
+                "Episode number: " + episodeNumber + '\n' +
+                "Season Number: " + seasonNumber + '\n' +
+                (runtime > 0 ? "Runtime: " + runtime + " minutes" : "Runtime: -");
+    }
 }

@@ -7,6 +7,10 @@ public class TVSeries {
     private LocalDate releaseDate;
     private ArrayList<Episode> episodes;
 
+    public TVSeries(){
+        episodes = new ArrayList<>();
+    }
+
     public String getTitle() {
         return title;
     }
@@ -41,5 +45,13 @@ public class TVSeries {
 
     public void addEpisode(Episode episode){
         episodes.add(episode);
+    }
+
+    @Override
+    public String toString() {
+        return "TV series Title: " + title + '\n' +
+                "Description: " + description + '\n' +
+                "Release date: " + releaseDate + '\n' +
+                "Number of episodes: " + episodes.size();
     }
 }
