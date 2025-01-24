@@ -56,7 +56,7 @@ public class TVSeries {
     }
 
     public ArrayList<Episode> getEpisodesInSeason(int season){
-        System.out.println("Season " + season);
+        System.out.println("Season " + season + ":");
 
         ArrayList<Episode> episodesInSeason = new ArrayList<>();
 

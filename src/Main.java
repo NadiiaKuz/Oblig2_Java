@@ -1,5 +1,6 @@
 import java.sql.SQLOutput;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
     public static void main (String[] args){
@@ -33,7 +34,11 @@ public class Main {
             }
         }
 
-        System.out.println(arcane.getEpisodesInSeason(3));
+        ArrayList<Episode> episodeInSeason = arcane.getEpisodesInSeason(4);
+
+        for(Episode episode : episodeInSeason){
+            System.out.println(episode.getTitle());
+        }
 
     }
 }
