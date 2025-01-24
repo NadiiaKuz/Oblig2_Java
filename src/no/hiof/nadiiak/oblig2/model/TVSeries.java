@@ -1,3 +1,5 @@
+package no.hiof.nadiiak.oblig2.model;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -6,9 +8,12 @@ public class TVSeries {
     private String description;
     private LocalDate releaseDate;
     private ArrayList<Episode> episodes;
+    private double averageRunTime;
+    private int numSeasons;
 
     public TVSeries(){
         episodes = new ArrayList<>();
+        numSeasons = 0;
     }
 
     public String getTitle() {
@@ -43,8 +48,29 @@ public class TVSeries {
         this.episodes = episodes;
     }
 
+    public double getAverageRunTime() {
+        return averageRunTime;
+    }
+
+    public int getNumSeasons() {
+        return numSeasons;
+    }
+
     public void addEpisode(Episode episode){
+        int episodesSeason = episode.getSeasonNumber();
+
+        if (episodesSeason > numSeasons + 1){
+            System.out.println("ERROR: Episode: " + episode.getTitle() + " could not be added in " +
+                    episodesSeason + " season. The allowed season is " + (numSeasons + 1));
+            return;
+        }
+
+        if (episodesSeason == numSeasons + 1) {
+            numSeasons++;
+        }
+
         episodes.add(episode);
+        averageRunTime = updateAverageRuntime();
     }
 
     @Override
@@ -56,9 +82,12 @@ public class TVSeries {
     }
 
     public ArrayList<Episode> getEpisodesInSeason(int season){
-        System.out.println("Season " + season + ":");
 
         ArrayList<Episode> episodesInSeason = new ArrayList<>();
+
+        if (episodes.isEmpty()) {
+            System.out.println("There are no episodes in season " + season);
+        }
 
         for (Episode episode : episodes){
             if(episode.getSeasonNumber() == season){
@@ -68,4 +97,21 @@ public class TVSeries {
 
         return episodesInSeason;
     }
+
+    private double updateAverageRuntime(){
+        int runtimeSum = 0;
+        int numberOfEpisodes = episodes.size();
+
+        if (numberOfEpisodes == 0){
+            return 0;
+        }
+
+        for (Episode episode : episodes){
+            runtimeSum += episode.getRuntime();
+        }
+
+        double result = (double) runtimeSum / numberOfEpisodes;
+        return Math.round(result * 10.0) / 10.0;
+    }
 }
+

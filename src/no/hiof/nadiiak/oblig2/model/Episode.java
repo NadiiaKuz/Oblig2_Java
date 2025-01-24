@@ -1,3 +1,5 @@
+package no.hiof.nadiiak.oblig2.model;
+
 public class Episode {
     private String title;
     private int episodeNumber;
