@@ -10,7 +10,7 @@ public class Main {
         arcane.setDescription("Arcane is an animated series about the origins of League of Legends");
         arcane.setReleaseDate(LocalDate.of(2021, 11, 6));
 
-        Episode arcane1_1 = new Episode("Welcome to the Playground", 1, 1, 42);
+        /* Episode arcane1_1 = new Episode("Welcome to the Playground", 1, 1, 42);
         Episode arcane1_2 = new Episode("Some Mysteries Are Better Left Unsolved", 2, 1);
         Episode arcane1_3 = new Episode("The Base Violence Necessary for Change", 3, 1, 44);
 
@@ -24,6 +24,16 @@ public class Main {
         System.out.println("---Episode 2---");
         System.out.println(arcane1_2);
         System.out.println("---Episode 3---");
-        System.out.println(arcane1_3);
+        System.out.println(arcane1_3); */
+
+        for (int s = 1; s <= 5; s++){
+            for(int e = 1; e <= 10; e++){
+                Episode arcaneEpisode = new Episode("Episode" + e, e, s);
+                arcane.addEpisode(arcaneEpisode);
+            }
+        }
+
+        System.out.println(arcane.getEpisodesInSeason(3));
+
     }
 }

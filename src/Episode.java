@@ -51,9 +51,9 @@ public class Episode {
 
     @Override
     public String toString() {
-        return "Episode Title: " + title + '\n' +
+        return "\nEpisode Title: " + title + '\n' +
                 "Episode number: " + episodeNumber + '\n' +
                 "Season Number: " + seasonNumber + '\n' +
-                (runtime > 0 ? "Runtime: " + runtime + " minutes" : "Runtime: -");
+                (runtime > 0 ? "Runtime: " + runtime + " minutes" : "Runtime: -" + '\n');
     }
 }

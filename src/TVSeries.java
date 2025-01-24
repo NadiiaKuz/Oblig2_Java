@@ -52,6 +52,20 @@ public class TVSeries {
         return "TV series Title: " + title + '\n' +
                 "Description: " + description + '\n' +
                 "Release date: " + releaseDate + '\n' +
-                "Number of episodes: " + episodes.size();
+                "Number of episodes: " + episodes.size() + '\n';
+    }
+
+    public ArrayList<Episode> getEpisodesInSeason(int season){
+        System.out.println("Season " + season);
+
+        ArrayList<Episode> episodesInSeason = new ArrayList<>();
+
+        for (Episode episode : episodes){
+            if(episode.getSeasonNumber() == season){
+                episodesInSeason.add(episode);
+            }
+        }
+
+        return episodesInSeason;
     }
 }
